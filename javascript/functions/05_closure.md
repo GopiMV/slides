@@ -2,11 +2,11 @@
 
 	!javascript
 	function foo(x) {
-	  var tmp = 3;
-	  function bar(y) {
-	    alert(x + y + (++tmp));
-	  }
-	  bar(10);
+		var tmp = 3;
+	  	function bar(y) {
+	    	alert(x + y + (++tmp));
+	  	}
+	  	bar(10);
 	}
 	foo(2);
 	
@@ -17,17 +17,40 @@ Whenever you see the function keyword within another function, the inner functio
 
 # Closure
 
+.fx: no-transition
+
 	!javascript
 	function foo(x) {
-	  var tmp = 3;
-	  function bar(y) {
-	    alert(x + y + (++tmp)); // 2+10+4 = 16
-	  }
-	  bar(10);
+	  	var tmp = 3;
+	  	function bar(y) {
+	    	alert(x + y + (++tmp)); // 2 + 10 + 4 = 16
+	  	}
+	  	bar(10);
+	}
+	foo(2);
+
+# Presenter Notes
+This will always alert 16, because bar can access the x which was defined as an argument to foo, and it can also access tmp from foo.
+
+That is not a closure. A closure is when you return the inner function. The inner function will close-over the variables of foo before leaving.	
+
+---
+
+# Closure
+
+.fx: no-transition
+
+	!javascript
+	function foo(x) {
+	  	var tmp = 3;
+	  	function bar(y) {
+	    	alert(x + y + (++tmp)); // 2 + 10 + 4 = 16
+	  	}
+	  	bar(10);
 	}
 	foo(2);
 	
-* THIS IS NOT A CLOSURE
+# THIS IS NOT A CLOSURE
 
 # Presenter Notes
 This will always alert 16, because bar can access the x which was defined as an argument to foo, and it can also access tmp from foo.
@@ -40,9 +63,9 @@ That is not a closure. A closure is when you return the inner function. The inne
 
 	!javascript
 	function foo(x) {
-	  var tmp = 3;
-	  return function (y) {
-	    alert(x + y + (++tmp));
+	  	var tmp = 3;
+	  	return function (y) {
+	    	alert(x + y + (++tmp));
 	  }
 	}
 	var bar = foo(2); // bar is now a closure
@@ -55,6 +78,8 @@ However, since tmp is still hanging around inside bar's closure, it is also bein
 	
 ---
 
-# Closure
-## Takeaway:
-### A closure in JavaScript is like keeping a copy of the all the local variables, just as they were when a function exited.
+# Closure 
+
+# Takeaway:
+
+* A closure in JavaScript is like keeping a copy of the all the local variables, just as they were when a function exited.

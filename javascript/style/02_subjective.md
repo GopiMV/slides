@@ -26,6 +26,8 @@
 
 # Style Isn't Subjective
 
+.fx: no-transition
+
 	!javascript
 	return; // semicolon insertion
 	{
@@ -35,6 +37,8 @@
 ---
 
 # Style Isn't Subjective
+
+.fx: no-transition
 
 	!javascript
 	return;
@@ -46,6 +50,8 @@
 
 # Style Isn't Subjective
 
+.fx: no-transition
+
 	!javascript
 	return;
 	{
@@ -55,6 +61,8 @@
 ---
 
 # Style Isn't Subjective
+
+.fx: no-transition
 
 	!javascript
 	return;
@@ -66,6 +74,8 @@
 
 # Style Isn't Subjective
 
+.fx: no-transition
+
 	!javascript
 	return;
 	{
@@ -76,6 +86,8 @@
 
 # Style Isn't Subjective
 
+.fx: no-transition
+
 	!javascript
 	return;
 	{
@@ -85,6 +97,8 @@
 ---
 
 # Style Isn't Subjective
+
+.fx: no-transition
 
 	!javascript
 	return;

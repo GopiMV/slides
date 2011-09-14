@@ -7,17 +7,15 @@
 * Global Variables
 * Semicolon insertion
 * \+ adds and concatenates 
-* typeof 
-* with and eval 
+* `typeof` 
+* `with` and `eval` 
 * phony arrays 
-* false, null, undefined, NaN 
-* == and != 
+* `false`, `null`, `undefined`, `NaN` 
+* `==` and `!=` 
 
 ---
 
 # The Good Parts
-
-.fx: data-build
 
 * Loose Typing 
 * Dynamic Objects 

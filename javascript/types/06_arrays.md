@@ -7,6 +7,8 @@
 
 # Array literals
 
+### An expressive notation for creating arrays
+
 	!javascript
 	var array = ['one', 'two', 'three'];
 	

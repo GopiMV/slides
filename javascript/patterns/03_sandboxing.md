@@ -1,12 +1,15 @@
 # Sandboxing
 
 	!javascript
-	(function(window, undefined) {
+	(function (window, undefined) {
 		var document = window.document,
-			navigator = window.navigator,
-			location = window.location;
+			$ = jQuery = window.jQuery.noConflict(),
+			_ = window._.noConflict(),
+			Backbone = window.Backbone.noConflict();
+
+		var ffshop = {};
 		
-		// ....
+		// ...
 		
-		window.jQuery = window.$ = jQuery;
-	})(window);  
+		window.ffshop = ffshop;
+	} (window));

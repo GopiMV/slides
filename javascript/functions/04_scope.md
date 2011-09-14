@@ -14,6 +14,8 @@
 
 # Scope
 
+.fx: no-transition
+
 	!javascript
 	var foo = 1; 
 	function bar() { 
@@ -27,6 +29,8 @@
 ---
 
 # Scope
+
+.fx: no-transition
 
 	!javascript
 	var foo = 1; 
@@ -60,6 +64,8 @@
 
 # Global Scope
 
+.fx: no-transition
+
 	!javascript
 	function foo() {
 		var a = 10;
@@ -73,12 +79,16 @@
 	foo();
 	alert(a); // 10
 	
-* **GLOBAL VARIABLES ARE EVIL**
+---
+
+# GLOBAL VARIABLES ARE EVIL!
 
 ---
 
-# Scope
-## Takeaway:
-### JavaScript has **function scope**, not block scope
-### If you forget the **var** keyword, you create a global reference
-### **Never** forget the var keyword 
+# Scope 
+
+# Takeaway:
+
+* JavaScript has **function scope**, not block scope
+* If you forget the **var** keyword, you create a global reference
+* **Never** forget the var keyword 

@@ -1,5 +1,7 @@
 # Scope
 
+.fx: runnable
+
 	!javascript
 	var foo = 1; 
 	function bar() { 
@@ -14,23 +16,7 @@
 
 # Scope
 
-.fx: no-transition
-
-	!javascript
-	var foo = 1; 
-	function bar() { 
-	    if (!foo) { 
-	        var foo = 10; 
-	    } 
-	    alert(foo); // 10
-	} 
-	bar();
-
----
-
-# Scope
-
-.fx: no-transition
+.fx: no-transition runnable
 
 	!javascript
 	var foo = 1; 
@@ -47,6 +33,8 @@
 
 # Global Scope
 
+.fx: runnable
+
 	!javascript
 	function foo() {
 		var a = 10;
@@ -59,25 +47,6 @@
 	}
 	foo();
 	alert(a);
-	
----
-
-# Global Scope
-
-.fx: no-transition
-
-	!javascript
-	function foo() {
-		var a = 10;
-	}
-	foo();
-	alert(a); // undefined
-	
-	function foo() {
-		a = 10;
-	}
-	foo();
-	alert(a); // 10
 	
 ---
 

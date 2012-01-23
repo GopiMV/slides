@@ -7,33 +7,56 @@
 
 # Prototype
 
+.fx: runnable
+
 	!javascript
-	function Pet(name, species, hello) {
+	var Person = function (name) {
 	    this.name = name;
-	    this.species = species;
-	    this.hello = hello;
-	}
+	};
 
-	Pet.prototype.sayHello = function()	{
-	    alert(this.hello);
-	}
+	Person.prototype.sayHello = function () {
+	    alert('Hello, my name is ' + this.name);
+	};
 
-	var rufus = new Pet("Rufus", "cat", "miaow");
-	rufus.sayHello();
-	
+	var thomas = new Person("Thomas");
+	thomas.sayHello();
+
+---
+
+# Prototype
+
+.fx: no-transition runnable
+
+	!javascript
+	var Person = function (name) {
+	    this.name = name;
+	};
+
+	Person.prototype.sayHello = function () {
+	    alert('Hello, my name is ' + this.name);
+	};
+
+	var thomas = new Person("Thomas");
+	thomas.sayHello();
+
+	Person.prototype.sayMyName = function () {
+    	alert('Hello, my name is ' + this.name);
+	};
+
+	thomas.sayMyName();
+
 ---
 
 # Prototype Chaining
 
-	!javascript
-	function Cat(name, hello, breed, whiskerLength)	{
-	    this.name = name;
-	    this.species = species;
-	    this.hello = hello;
-	    this.breed = breed;
-	    this.whiskerLength = whiskerLength;
-	}
+.fx: runnable
 
-	Cat.prototype = new Pet();
-	var rufus = new Cat("rufus", "miaow", "Maine Coon", 7);
-	rufus.sayHello();
+	!javascript
+	var Customer = function (name) {
+	    this.name = name;
+	};
+
+	Customer.prototype = new Person();
+
+	var customer = new Customer("Customer");
+	customer.sayHello();

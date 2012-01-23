@@ -8,9 +8,11 @@
 
 # parseInt
 
+.fx: runnable
+
 	!javascript
-	parseInt("123"); // 123
-	parseInt("010"); // 8
+	parseInt("123");
+	parseInt("010");
 
 
 ---
@@ -23,9 +25,6 @@
 	parseInt("123"); // 123
 	parseInt("010"); // 8
 
-
-## ?!?
-
 ---
 
 # parseInt
@@ -37,27 +36,40 @@
 	parseInt("010"); // 8
 
 
-## ?!?
+# ?!?
+
+---
+
+# parseInt
+
+.fx: no-transition runnable
+
+	!javascript
+	parseInt("123"); // 123
+	parseInt("010"); // 8
+
+
+# ?!?
+
+	!javascript
+	parseInt("010", 10);
+	parseInt("11", 2);
+
+---
+
+# parseInt
+
+.fx: no-transition runnable
+
+	!javascript
+	parseInt("123"); // 123
+	parseInt("010"); // 8
+
+
+# ?!?
 
 	!javascript
 	parseInt("010", 10); // 10
 	parseInt("11", 2); // 3
 
----
-
-# parseInt
-
-.fx: no-transition
-
-	!javascript
-	parseInt("123"); // 123
-	parseInt("010"); // 8
-
-
-## ?!?
-
-	!javascript
-	parseInt("010", 10); // 10
-	parseInt("11", 2); // 3
-	
 # ALWAYS SPECIFY THE BASE

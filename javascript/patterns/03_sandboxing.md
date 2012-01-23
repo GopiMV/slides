@@ -7,9 +7,9 @@
 			_ = window._.noConflict(),
 			Backbone = window.Backbone.noConflict();
 
-		var ffshop = {};
-		
+		var root = {};
+
 		// ...
-		
-		window.ffshop = ffshop;
+
+		window.root = root;
 	} (window));

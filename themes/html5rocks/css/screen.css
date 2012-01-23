@@ -1,10 +1,19 @@
 body {
-  font: 14px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font: 20px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
   background: #778;
   padding: 0;
   margin: 0;
   overflow: hidden;
 }
+div.run {
+      position: absolute;
+      right: 15px;
+      width: 26px; height: 18px;
+      background: url('arrows.png') no-repeat -26px 0;
+    }
+      div.run:active {
+        background-position: -51px 0;
+      }
 
 div.presentation {
   position: absolute;
@@ -292,12 +301,16 @@ header:not(:only-child) {
   padding: 0;
 }
 
-header h1, header h2, header h3, header h4, header h5, header h6 {
+header h1, header h2, header h3, header h4, header h5, header h6, h1, h2, h3, h4 {
   display: inline;
   font-size: 100%;
   font-weight: normal;
   padding: 0;
   margin: 0;
+}
+
+h1 {
+  font-weight: bold;
 }
 
 header h2:first-child {
@@ -316,7 +329,12 @@ section, .slide header:only-child h1 {
 }
 
 img { display: block; margin: auto; }
-
+.social img {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  margin-top: -5px;
+}
 section img.align-center {
   display: block;
   margin-left: auto;
@@ -344,13 +362,13 @@ a {
 }
 
 pre {
-  font-size: 16px;
+  font-size: 20px;
   font-family: Monaco, Courier, monospace;
 }
 
 li {
   padding: 10px 0;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .slide header:only-child h1 {

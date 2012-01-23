@@ -1,5 +1,7 @@
 # Hoisting
 
+.fx: runnable
+
 	!javascript
 	var myvar = 'my value';  
 
@@ -14,23 +16,7 @@
 
 # Hoisting
 
-.fx: no-transition
-
-	!javascript
-	var myvar = 'my value';  
-
-	function bar() {  
-	  	alert(myvar); // undefined  
-	  	var myvar = 'local value';  
-	}
-	
-	bar();
-	
----
-
-# Hoisting
-
-.fx: no-transition
+.fx: no-transition runnable
 
 	!javascript
 	var myvar = 'my value';  
@@ -47,10 +33,12 @@
 
 # Hoisting
 
+.fx: runnable
+
 # Function expression:
 
 	!javascript
-	alert(add(2, 3)); // undefined
+	alert(add(2, 3));
 	var add = function(a, b) {
 		return a + b;
 	};
@@ -58,7 +46,7 @@
 # Function declaration:	
 	
 	!javascript
-	alert(add(2, 3)); // 5
+	alert(add(2, 3));
 	function add(a, b) { 
 		return a + b; 
 	}
@@ -67,7 +55,7 @@
 
 # Hoisting
 
-.fx: no-transition
+.fx: no-transition runnable
 
 # Function expression:
 

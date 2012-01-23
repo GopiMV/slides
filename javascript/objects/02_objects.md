@@ -9,27 +9,27 @@
 # get, set, and delete
 
 	!javascript
-	// get 
-	var name = object.name; 
-	var name = object['name']; 
-	
-	// set 
-	object.name = value; 
+	// get
+	var name = object.name;
+	var name = object['name'];
+
+	// set
+	object.name = value;
 	object['name'] = value;
-	
+
 	// delete
 	delete object.name;
 	delete object['name'];
-	
+
 ---
 
-# Object literals 
+# Object literals
 
-### An expressive notation for creating objects
+### An expressive notation for creating objects:
 
 	!javascript
 	var emptyObject = { };
-	
+
 	var myObject = {
 		"some-property": "some value",
 		foo: bar,

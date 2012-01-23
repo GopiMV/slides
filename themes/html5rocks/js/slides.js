@@ -116,13 +116,13 @@ function main() {
 
 		var currentSlide = getSlideEl(currentSlideNo);
 		var noTransition = currentSlide.className.indexOf('no-transition') > 0;
-		
+
         for (var i=1; i<slides.length + 1; i++) {
 			var el = getSlideEl(i);
 			if(noTransition) {
-	            removeClass(el, 'transition');				
+	            removeClass(el, 'transition');
 			} else {
-	            addClass(el, 'transition');				
+	            addClass(el, 'transition');
 			}
         }
 
@@ -459,6 +459,11 @@ function main() {
                     showPresenterView();
                 }
                 break;
+            case 82: // r
+                if(modifierKeyDown) {
+                    $('.current .run').click();
+                }
+                break;
             case 83: // s
                 if (!modifierKeyDown && !overviewActive) {
                     showSlideSources();
@@ -586,5 +591,20 @@ function main() {
         addSlideClickListeners();
 
         addRemoteWindowControls();
+
+        // $('.runnable').each(function() {
+        //     var codes = $(this).find('pre');
+        //     codes.each(function(){
+        //         var code = $(this);
+        //         var button = $('<div class="run" title="Run"></div>');
+        //         $(button).insertBefore(code).bind('click', function(){
+        //             try {
+        //                 eval($(code).text());
+        //             } catch(err){
+        //                 alert("Caught exception: " + err);
+        //             }
+        //         });
+        //     });
+        // });
     })();
 }

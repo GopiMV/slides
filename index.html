@@ -28,15 +28,19 @@
     <title>JavaScript</title>
     <!-- Styles -->
     
-    <link rel="stylesheet" media="print" href="theme/css/print.css">
-    <link rel="stylesheet" media="screen, projection" href="theme/css/screen.css">
+    <link rel="stylesheet" media="print" href="themes/html5rocks/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="themes/html5rocks/css/screen.css">
     
     
     <!-- /Styles -->
     <!-- Javascripts -->
     
-    <script type="text/javascript" src="theme/js/slides.js"></script>
+    <script type="text/javascript" src="themes/html5rocks/js/slides.js"></script>
     
+    
+      
+      <script type="text/javascript" src="themes/html5rocks/js/jquery.min.js"></script>
+      
     
     <!-- /Javascripts -->
 </head>
@@ -70,7 +74,7 @@
             </aside>
             
             <aside class="page_number">
-              1/111
+              1/68
             </aside>
           </footer>
         </div>
@@ -98,7 +102,7 @@
             </aside>
             
             <aside class="page_number">
-              2/111
+              2/68
             </aside>
           </footer>
         </div>
@@ -137,7 +141,7 @@
             </aside>
             
             <aside class="page_number">
-              3/111
+              3/68
             </aside>
           </footer>
         </div>
@@ -172,7 +176,7 @@
             </aside>
             
             <aside class="page_number">
-              4/111
+              4/68
             </aside>
           </footer>
         </div>
@@ -200,7 +204,7 @@
             </aside>
             
             <aside class="page_number">
-              5/111
+              5/68
             </aside>
           </footer>
         </div>
@@ -234,7 +238,7 @@
             </aside>
             
             <aside class="page_number">
-              6/111
+              6/68
             </aside>
           </footer>
         </div>
@@ -248,12 +252,12 @@
             <header><h1>get, set, and delete</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="c1">// get </span>
-<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> 
+            <section><div class="highlight"><pre><span class="c1">// get</span>
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">object</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
 
-<span class="c1">// set </span>
-<span class="nx">object</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span> 
+<span class="c1">// set</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
 <span class="nx">object</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
 
 <span class="c1">// delete</span>
@@ -276,7 +280,7 @@
             </aside>
             
             <aside class="page_number">
-              7/111
+              7/68
             </aside>
           </footer>
         </div>
@@ -290,7 +294,7 @@
             <header><h1>Object literals</h1></header>
             
             
-            <section><h3>An expressive notation for creating objects</h3>
+            <section><h3>An expressive notation for creating objects:</h3>
 <div class="highlight"><pre><span class="kd">var</span> <span class="nx">emptyObject</span> <span class="o">=</span> <span class="p">{</span> <span class="p">};</span>
 
 <span class="kd">var</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{</span>
@@ -317,7 +321,7 @@
             </aside>
             
             <aside class="page_number">
-              8/111
+              8/68
             </aside>
           </footer>
         </div>
@@ -350,7 +354,7 @@
             </aside>
             
             <aside class="page_number">
-              9/111
+              9/68
             </aside>
           </footer>
         </div>
@@ -358,24 +362,22 @@
       
       <!-- slide source: javascript/objects/03_prototype.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide has_code runnable">
           <div class="inner">
             
             <header><h1>Prototype</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">Pet</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">species</span><span class="p">,</span> <span class="nx">hello</span><span class="p">)</span> <span class="p">{</span>
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">species</span> <span class="o">=</span> <span class="nx">species</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">hello</span> <span class="o">=</span> <span class="nx">hello</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="p">};</span>
 
-<span class="nx">Pet</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">hello</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello, my name is &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">};</span>
 
-<span class="kd">var</span> <span class="nx">rufus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pet</span><span class="p">(</span><span class="s2">&quot;Rufus&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;miaow&quot;</span><span class="p">);</span>
-<span class="nx">rufus</span><span class="p">.</span><span class="nx">sayHello</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">thomas</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Thomas&quot;</span><span class="p">);</span>
+<span class="nx">thomas</span><span class="p">.</span><span class="nx">sayHello</span><span class="p">();</span>
 </pre></div>
 </section>
             
@@ -393,7 +395,7 @@
             </aside>
             
             <aside class="page_number">
-              10/111
+              10/68
             </aside>
           </footer>
         </div>
@@ -401,23 +403,28 @@
       
       <!-- slide source: javascript/objects/03_prototype.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide has_code no-transition runnable">
           <div class="inner">
             
-            <header><h1>Prototype Chaining</h1></header>
+            <header><h1>Prototype</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">Cat</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">hello</span><span class="p">,</span> <span class="nx">breed</span><span class="p">,</span> <span class="nx">whiskerLength</span><span class="p">)</span> <span class="p">{</span>
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">species</span> <span class="o">=</span> <span class="nx">species</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">hello</span> <span class="o">=</span> <span class="nx">hello</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">breed</span> <span class="o">=</span> <span class="nx">breed</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">whiskerLength</span> <span class="o">=</span> <span class="nx">whiskerLength</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="p">};</span>
 
-<span class="nx">Cat</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pet</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">rufus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cat</span><span class="p">(</span><span class="s2">&quot;rufus&quot;</span><span class="p">,</span> <span class="s2">&quot;miaow&quot;</span><span class="p">,</span> <span class="s2">&quot;Maine Coon&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
-<span class="nx">rufus</span><span class="p">.</span><span class="nx">sayHello</span><span class="p">();</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello, my name is &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">thomas</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Thomas&quot;</span><span class="p">);</span>
+<span class="nx">thomas</span><span class="p">.</span><span class="nx">sayHello</span><span class="p">();</span>
+
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayMyName</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello, my name is &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">thomas</span><span class="p">.</span><span class="nx">sayMyName</span><span class="p">();</span>
 </pre></div>
 </section>
             
@@ -435,7 +442,46 @@
             </aside>
             
             <aside class="page_number">
-              11/111
+              11/68
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: javascript/objects/03_prototype.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code runnable">
+          <div class="inner">
+            
+            <header><h1>Prototype Chaining</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Customer</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">Customer</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">customer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Customer</span><span class="p">(</span><span class="s2">&quot;Customer&quot;</span><span class="p">);</span>
+<span class="nx">customer</span><span class="p">.</span><span class="nx">sayHello</span><span class="p">();</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="javascript/objects/03_prototype.md">javascript/objects/03_prototype.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/68
             </aside>
           </footer>
         </div>
@@ -463,7 +509,7 @@
             </aside>
             
             <aside class="page_number">
-              12/111
+              13/68
             </aside>
           </footer>
         </div>
@@ -498,7 +544,7 @@
             </aside>
             
             <aside class="page_number">
-              13/111
+              14/68
             </aside>
           </footer>
         </div>
@@ -547,13 +593,13 @@
             </aside>
             
             <aside class="page_number">
-              14/111
+              15/68
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: javascript/functions/02_functions.md -->
+      <!-- slide source: javascript/functions/02_invocation_patterns.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
@@ -579,17 +625,17 @@
           <footer>
             
             <aside class="source">
-              Source: <a href="javascript/functions/02_functions.md">javascript/functions/02_functions.md</a>
+              Source: <a href="javascript/functions/02_invocation_patterns.md">javascript/functions/02_invocation_patterns.md</a>
             </aside>
             
             <aside class="page_number">
-              15/111
+              16/68
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: javascript/functions/02_functions.md -->
+      <!-- slide source: javascript/functions/02_invocation_patterns.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -623,19 +669,19 @@
           <footer>
             
             <aside class="source">
-              Source: <a href="javascript/functions/02_functions.md">javascript/functions/02_functions.md</a>
+              Source: <a href="javascript/functions/02_invocation_patterns.md">javascript/functions/02_invocation_patterns.md</a>
             </aside>
             
             <aside class="page_number">
-              16/111
+              17/68
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: javascript/functions/02_functions.md -->
+      <!-- slide source: javascript/functions/02_invocation_patterns.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide has_code runnable">
           <div class="inner">
             
             <header><h1>Function invocation pattern</h1></header>
@@ -668,17 +714,17 @@ A consequence is that a method cannot employ an inner function to help it do its
           <footer>
             
             <aside class="source">
-              Source: <a href="javascript/functions/02_functions.md">javascript/functions/02_functions.md</a>
+              Source: <a href="javascript/functions/02_invocation_patterns.md">javascript/functions/02_invocation_patterns.md</a>
             </aside>
             
             <aside class="page_number">
-              17/111
+              18/68
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: javascript/functions/02_functions.md -->
+      <!-- slide source: javascript/functions/02_invocation_patterns.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -711,17 +757,17 @@ A consequence is that a method cannot employ an inner function to help it do its
           <footer>
             
             <aside class="source">
-              Source: <a href="javascript/functions/02_functions.md">javascript/functions/02_functions.md</a>
+              Source: <a href="javascript/functions/02_invocation_patterns.md">javascript/functions/02_invocation_patterns.md</a>
             </aside>
             
             <aside class="page_number">
-              18/111
+              19/68
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: javascript/functions/02_functions.md -->
+      <!-- slide source: javascript/functions/02_invocation_patterns.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -756,17 +802,17 @@ A consequence is that a method cannot employ an inner function to help it do its
           <footer>
             
             <aside class="source">
-              Source: <a href="javascript/functions/02_functions.md">javascript/functions/02_functions.md</a>
+              Source: <a href="javascript/functions/02_invocation_patterns.md">javascript/functions/02_invocation_patterns.md</a>
             </aside>
             
             <aside class="page_number">
-              19/111
+              20/68
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: javascript/functions/02_functions.md -->
+      <!-- slide source: javascript/functions/02_invocation_patterns.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -779,56 +825,14 @@ A consequence is that a method cannot employ an inner function to help it do its
 <li>It lets us choose the value of <code>this</code></li>
 </ul>
 <h1>Example:</h1>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">add</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">array</span><span class="p">);</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="javascript/functions/02_functions.md">javascript/functions/02_functions.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              20/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: javascript/functions/02_functions.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>arguments</h1></header>
-            
-            
-            <section><ul>
-<li>When a function is invoked, in addition to its parameters, it also gets a special parameter called <code>arguments</code></li>
-<li>It contains all of the arguments from the invocation</li>
-<li>It is an array-like object</li>
-<li><code>arguments.length</code> is the number of arguments passed</li>
-</ul>
-<h1>Example:</h1>
-<div class="highlight"><pre><span class="kd">function</span> <span class="nx">calcAverage</span><span class="p">()</span> <span class="p">{</span> 
-    <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">sum</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="kd">var</span> <span class="nx">average</span> <span class="o">=</span> <span class="nx">sum</span><span class="o">/</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-    <span class="k">return</span> <span class="nx">average</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
 
-<span class="kd">var</span> <span class="nx">average</span> <span class="o">=</span> <span class="nx">calcAverage</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">83</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">add</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">array</span><span class="p">);</span> <span class="c1">// this === context inside</span>
+                                     <span class="c1">// the add function</span>
+
+<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">add</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// this === context inside</span>
+                                   <span class="c1">// the add function</span>
 </pre></div>
 </section>
             
@@ -842,11 +846,11 @@ A consequence is that a method cannot employ an inner function to help it do its
           <footer>
             
             <aside class="source">
-              Source: <a href="javascript/functions/02_functions.md">javascript/functions/02_functions.md</a>
+              Source: <a href="javascript/functions/02_invocation_patterns.md">javascript/functions/02_invocation_patterns.md</a>
             </aside>
             
             <aside class="page_number">
-              21/111
+              21/68
             </aside>
           </footer>
         </div>
@@ -854,7 +858,7 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/functions/03_hoisting.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide has_code runnable">
           <div class="inner">
             
             <header><h1>Hoisting</h1></header>
@@ -885,7 +889,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              22/111
+              22/68
             </aside>
           </footer>
         </div>
@@ -893,46 +897,7 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/functions/03_hoisting.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code no-transition">
-          <div class="inner">
-            
-            <header><h1>Hoisting</h1></header>
-            
-            
-            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">myvar</span> <span class="o">=</span> <span class="s1">&#39;my value&#39;</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span> <span class="p">{</span>  
-    <span class="nx">alert</span><span class="p">(</span><span class="nx">myvar</span><span class="p">);</span> <span class="c1">// undefined  </span>
-    <span class="kd">var</span> <span class="nx">myvar</span> <span class="o">=</span> <span class="s1">&#39;local value&#39;</span><span class="p">;</span>  
-<span class="p">}</span>
-
-<span class="nx">bar</span><span class="p">();</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="javascript/functions/03_hoisting.md">javascript/functions/03_hoisting.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              23/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: javascript/functions/03_hoisting.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code no-transition">
+        <div class="slide has_code no-transition runnable">
           <div class="inner">
             
             <header><h1>Hoisting</h1></header>
@@ -964,7 +929,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              24/111
+              23/68
             </aside>
           </footer>
         </div>
@@ -972,21 +937,21 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/functions/03_hoisting.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide has_code runnable">
           <div class="inner">
             
             <header><h1>Hoisting</h1></header>
             
             
             <section><h1>Function expression:</h1>
-<div class="highlight"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span> <span class="c1">// undefined</span>
+<div class="highlight"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
 <span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 
 <h1>Function declaration:</h1>
-<div class="highlight"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span> <span class="c1">// 5</span>
+<div class="highlight"><pre><span class="nx">alert</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
 <span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> 
     <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span> 
 <span class="p">}</span>
@@ -1007,7 +972,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              25/111
+              24/68
             </aside>
           </footer>
         </div>
@@ -1015,7 +980,7 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/functions/03_hoisting.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code no-transition">
+        <div class="slide has_code no-transition runnable">
           <div class="inner">
             
             <header><h1>Hoisting</h1></header>
@@ -1051,7 +1016,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              26/111
+              25/68
             </aside>
           </footer>
         </div>
@@ -1085,7 +1050,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              27/111
+              26/68
             </aside>
           </footer>
         </div>
@@ -1093,7 +1058,7 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/functions/04_scope.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide has_code runnable">
           <div class="inner">
             
             <header><h1>Scope</h1></header>
@@ -1124,7 +1089,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              28/111
+              27/68
             </aside>
           </footer>
         </div>
@@ -1132,46 +1097,7 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/functions/04_scope.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code no-transition">
-          <div class="inner">
-            
-            <header><h1>Scope</h1></header>
-            
-            
-            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
-<span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span> <span class="p">{</span> 
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">foo</span><span class="p">)</span> <span class="p">{</span> 
-        <span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> 
-    <span class="p">}</span> 
-    <span class="nx">alert</span><span class="p">(</span><span class="nx">foo</span><span class="p">);</span> <span class="c1">// 10</span>
-<span class="p">}</span> 
-<span class="nx">bar</span><span class="p">();</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="javascript/functions/04_scope.md">javascript/functions/04_scope.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              29/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: javascript/functions/04_scope.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code no-transition">
+        <div class="slide has_code no-transition runnable">
           <div class="inner">
             
             <header><h1>Scope</h1></header>
@@ -1203,7 +1129,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              30/111
+              28/68
             </aside>
           </footer>
         </div>
@@ -1211,7 +1137,7 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/functions/04_scope.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide has_code runnable">
           <div class="inner">
             
             <header><h1>Global Scope</h1></header>
@@ -1245,49 +1171,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              31/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: javascript/functions/04_scope.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code no-transition">
-          <div class="inner">
-            
-            <header><h1>Global Scope</h1></header>
-            
-            
-            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">foo</span><span class="p">();</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// undefined</span>
-
-<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">foo</span><span class="p">();</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 10</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="javascript/functions/04_scope.md">javascript/functions/04_scope.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              32/111
+              29/68
             </aside>
           </footer>
         </div>
@@ -1315,7 +1199,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              33/111
+              30/68
             </aside>
           </footer>
         </div>
@@ -1350,7 +1234,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              34/111
+              31/68
             </aside>
           </footer>
         </div>
@@ -1358,7 +1242,7 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/functions/05_closure.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide has_code runnable">
           <div class="inner">
             
             <header><h1>Closure</h1></header>
@@ -1381,7 +1265,8 @@ A consequence is that a method cannot employ an inner function to help it do its
             <header><h1>Presenter Notes</h1></header>
             <section>
             
-              <p>Whenever you see the function keyword within another function, the inner function has access to variables in the outer function.</p>
+              <p>Whenever you see the function keyword within another function, the inner function has access to variables in the outer function.
+This will always alert 16, because bar can access the x which was defined as an argument to foo, and it can also access tmp from foo.</p>
             
             </section>
           </div>
@@ -1392,7 +1277,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              35/111
+              32/68
             </aside>
           </footer>
         </div>
@@ -1400,50 +1285,7 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/functions/05_closure.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code no-transition">
-          <div class="inner">
-            
-            <header><h1>Closure</h1></header>
-            
-            
-            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="p">(</span><span class="o">++</span><span class="nx">tmp</span><span class="p">));</span> <span class="c1">// 2 + 10 + 4 = 16</span>
-    <span class="p">}</span>
-    <span class="nx">bar</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nx">foo</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-              <p>This will always alert 16, because bar can access the x which was defined as an argument to foo, and it can also access tmp from foo.</p>
-<p>That is not a closure. A closure is when you return the inner function. The inner function will close-over the variables of foo before leaving. </p>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="javascript/functions/05_closure.md">javascript/functions/05_closure.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              36/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: javascript/functions/05_closure.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code no-transition">
+        <div class="slide has_code no-transition runnable">
           <div class="inner">
             
             <header><h1>Closure</h1></header>
@@ -1467,8 +1309,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             <header><h1>Presenter Notes</h1></header>
             <section>
             
-              <p>This will always alert 16, because bar can access the x which was defined as an argument to foo, and it can also access tmp from foo.</p>
-<p>That is not a closure. A closure is when you return the inner function. The inner function will close-over the variables of foo before leaving.</p>
+              <p>That is not a closure. A closure is when you return the inner function. The inner function will close-over the variables of foo before leaving.</p>
             
             </section>
           </div>
@@ -1479,7 +1320,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              37/111
+              33/68
             </aside>
           </footer>
         </div>
@@ -1487,7 +1328,7 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/functions/05_closure.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide has_code runnable">
           <div class="inner">
             
             <header><h1>Closure</h1></header>
@@ -1501,6 +1342,7 @@ A consequence is that a method cannot employ an inner function to help it do its
 <span class="p">}</span>
 <span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// bar is now a closure</span>
 <span class="nx">bar</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="nx">bar</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 
 </section>
@@ -1510,8 +1352,8 @@ A consequence is that a method cannot employ an inner function to help it do its
             <header><h1>Presenter Notes</h1></header>
             <section>
             
-              <p>This function will also alert 16, because bar can still refer to x and tmp, even though it is no longer directly inside the scope.</p>
-<p>However, since tmp is still hanging around inside bar's closure, it is also being incremented. It will be incremented each time you call bar.</p>
+              <p>This function will also alert 16, because bar can still refer to x and tmp, even though it is no longer directly inside the scope.
+However, since tmp is still hanging around inside bar's closure, it is also being incremented. It will be incremented each time you call bar.</p>
             
             </section>
           </div>
@@ -1522,7 +1364,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              38/111
+              34/68
             </aside>
           </footer>
         </div>
@@ -1555,7 +1397,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              39/111
+              35/68
             </aside>
           </footer>
         </div>
@@ -1592,7 +1434,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              40/111
+              36/68
             </aside>
           </footer>
         </div>
@@ -1626,7 +1468,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              41/111
+              37/68
             </aside>
           </footer>
         </div>
@@ -1634,7 +1476,40 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/types/03_numbers.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide has_code runnable">
+          <div class="inner">
+            
+            <header><h1>parseInt</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">);</span>
+<span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;010&quot;</span><span class="p">);</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="javascript/types/03_numbers.md">javascript/types/03_numbers.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              38/68
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: javascript/types/03_numbers.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code no-transition">
           <div class="inner">
             
             <header><h1>parseInt</h1></header>
@@ -1659,7 +1534,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              42/111
+              39/68
             </aside>
           </footer>
         </div>
@@ -1677,7 +1552,7 @@ A consequence is that a method cannot employ an inner function to help it do its
 <span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;010&quot;</span><span class="p">);</span> <span class="c1">// 8</span>
 </pre></div>
 
-<h2>?!?</h2></section>
+<h1>?!?</h1></section>
             
           </div>
           <div class="presenter_notes">
@@ -1693,7 +1568,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              43/111
+              40/68
             </aside>
           </footer>
         </div>
@@ -1701,7 +1576,7 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/types/03_numbers.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code no-transition">
+        <div class="slide has_code no-transition runnable">
           <div class="inner">
             
             <header><h1>parseInt</h1></header>
@@ -1711,9 +1586,9 @@ A consequence is that a method cannot employ an inner function to help it do its
 <span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;010&quot;</span><span class="p">);</span> <span class="c1">// 8</span>
 </pre></div>
 
-<h2>?!?</h2>
-<div class="highlight"><pre><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;010&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// 10</span>
-<span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;11&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 3</span>
+<h1>?!?</h1>
+<div class="highlight"><pre><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;010&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;11&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 </pre></div>
 </section>
             
@@ -1731,7 +1606,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              44/111
+              41/68
             </aside>
           </footer>
         </div>
@@ -1739,7 +1614,7 @@ A consequence is that a method cannot employ an inner function to help it do its
       
       <!-- slide source: javascript/types/03_numbers.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code no-transition">
+        <div class="slide has_code no-transition runnable">
           <div class="inner">
             
             <header><h1>parseInt</h1></header>
@@ -1749,7 +1624,7 @@ A consequence is that a method cannot employ an inner function to help it do its
 <span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;010&quot;</span><span class="p">);</span> <span class="c1">// 8</span>
 </pre></div>
 
-<h2>?!?</h2>
+<h1>?!?</h1>
 <div class="highlight"><pre><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;010&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// 10</span>
 <span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;11&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 3</span>
 </pre></div>
@@ -1770,7 +1645,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              45/111
+              42/68
             </aside>
           </footer>
         </div>
@@ -1805,7 +1680,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              46/111
+              43/68
             </aside>
           </footer>
         </div>
@@ -1840,7 +1715,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              47/111
+              44/68
             </aside>
           </footer>
         </div>
@@ -1873,7 +1748,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              48/111
+              45/68
             </aside>
           </footer>
         </div>
@@ -1906,7 +1781,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              49/111
+              46/68
             </aside>
           </footer>
         </div>
@@ -1944,7 +1819,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              50/111
+              47/68
             </aside>
           </footer>
         </div>
@@ -1958,14 +1833,14 @@ A consequence is that a method cannot employ an inner function to help it do its
             <header><h1>Dates</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;September 14, 2011&quot;</span><span class="p">);</span>
-<span class="nx">date</span><span class="p">.</span><span class="nx">getYear</span><span class="p">();</span>     <span class="c1">// 2011</span>
-<span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">();</span>    <span class="c1">// 8 ???</span>
-<span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>     <span class="c1">// 14</span>
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;January 25, 2012&quot;</span><span class="p">);</span>
+<span class="nx">date</span><span class="p">.</span><span class="nx">getYear</span><span class="p">();</span>     <span class="c1">// 2012</span>
+<span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">();</span>    <span class="c1">// 0 ???</span>
+<span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>     <span class="c1">// 25</span>
 </pre></div>
 
 <ul>
-<li>The <code>Date</code> function is based on Java's Date class</li>
+<li>The <code>Date</code> function is based on Java's Date class...</li>
 </ul></section>
             
           </div>
@@ -1982,7 +1857,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              51/111
+              48/68
             </aside>
           </footer>
         </div>
@@ -2016,7 +1891,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              52/111
+              49/68
             </aside>
           </footer>
         </div>
@@ -2044,7 +1919,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              53/111
+              50/68
             </aside>
           </footer>
         </div>
@@ -2089,7 +1964,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              54/111
+              51/68
             </aside>
           </footer>
         </div>
@@ -2136,7 +2011,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              55/111
+              52/68
             </aside>
           </footer>
         </div>
@@ -2156,11 +2031,11 @@ A consequence is that a method cannot employ an inner function to help it do its
         <span class="nx">_</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">_</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">(),</span>
         <span class="nx">Backbone</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">();</span>
 
-    <span class="kd">var</span> <span class="nx">ffshop</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="kd">var</span> <span class="nx">root</span> <span class="o">=</span> <span class="p">{};</span>
 
     <span class="c1">// ...</span>
 
-    <span class="nb">window</span><span class="p">.</span><span class="nx">ffshop</span> <span class="o">=</span> <span class="nx">ffshop</span><span class="p">;</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">root</span> <span class="o">=</span> <span class="nx">root</span><span class="p">;</span>
 <span class="p">}</span> <span class="p">(</span><span class="nb">window</span><span class="p">));</span>
 </pre></div>
 </section>
@@ -2179,35 +2054,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              56/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: javascript/patterns/04_namespace.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>BE RELIGIOUS ABOUT EXPANDING NO FURTHER THAN ONE ROOT VARIABLE! --&gt;</h1></header>
-            
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="javascript/patterns/04_namespace.md">javascript/patterns/04_namespace.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              57/111
+              53/68
             </aside>
           </footer>
         </div>
@@ -2235,7 +2082,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              58/111
+              54/68
             </aside>
           </footer>
         </div>
@@ -2276,7 +2123,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              59/111
+              55/68
             </aside>
           </footer>
         </div>
@@ -2311,7 +2158,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              60/111
+              56/68
             </aside>
           </footer>
         </div>
@@ -2346,7 +2193,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              61/111
+              57/68
             </aside>
           </footer>
         </div>
@@ -2381,7 +2228,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              62/111
+              58/68
             </aside>
           </footer>
         </div>
@@ -2416,7 +2263,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              63/111
+              59/68
             </aside>
           </footer>
         </div>
@@ -2451,7 +2298,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              64/111
+              60/68
             </aside>
           </footer>
         </div>
@@ -2486,7 +2333,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              65/111
+              61/68
             </aside>
           </footer>
         </div>
@@ -2521,7 +2368,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              66/111
+              62/68
             </aside>
           </footer>
         </div>
@@ -2556,7 +2403,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              67/111
+              63/68
             </aside>
           </footer>
         </div>
@@ -2598,7 +2445,7 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              68/111
+              64/68
             </aside>
           </footer>
         </div>
@@ -2632,1583 +2479,13 @@ A consequence is that a method cannot employ an inner function to help it do its
             </aside>
             
             <aside class="page_number">
-              69/111
+              65/68
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>jQuery</h1></header>
-            
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              70/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>jQuery</h1></header>
-            
-            
-            <section><p>jQuery is a fast and concise JavaScript Library that focuses on the interaction between HTML and JavaScript.</p>
-<p>jQuery is well behaved:</p>
-<ul>
-<li>does not hijack your global namespace</li>
-<li>plays well with other libraries</li>
-</ul>
-<p>Almost every operation boils down to:</p>
-<ul>
-<li>find some stuff</li>
-<li>do something to it</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              71/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>jQuery</h1></header>
-            
-            
-            <section><p>The features most relevant for our project:</p>
-<ul>
-<li>DOM element selections</li>
-<li>DOM traversing and manipulation</li>
-<li>Ajax</li>
-</ul>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              72/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>ready event</h1></header>
-            
-            
-            <section><p>Specify a function to execute when the DOM is fully loaded.</p>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;The DOM is now loaded and can be manipulated&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="c1">// short hand</span>
-<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;The DOM is now loaded and can be manipulated&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              73/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Selectors</h1></header>
-            
-            
-            <section><p>jQuery offers a powerful set of tools for matching a set of elements in a document</p>
-<h1>Examples of basic selectors:</h1>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">);</span>             <span class="c1">// all elements</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.myClass&#39;</span><span class="p">);</span>      <span class="c1">// by class name</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myDiv&#39;</span><span class="p">);</span>        <span class="c1">// by id</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>           <span class="c1">// all div elements</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="s1">&#39;span&#39;</span><span class="p">);</span>   <span class="c1">// all div and span elements</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              74/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Selectors</h1></header>
-            
-            
-            <section><h1>Example of filters:</h1>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;tr:first&#39;</span><span class="p">);</span>               <span class="c1">// first tr element</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;tr:last&#39;</span><span class="p">);</span>                <span class="c1">// last tr element</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;tr:not&#39;</span><span class="p">);</span>                 <span class="c1">// elements that are not tr elements</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div span:first-child&#39;</span><span class="p">);</span>   <span class="c1">// first span in each div.</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div span:nth-child(1)&#39;</span><span class="p">);</span>  <span class="c1">// same as above</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div:has(p)&#39;</span><span class="p">);</span>             <span class="c1">// div elements that has at least one p child element</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div:contains(&quot;hello&quot;)&#39;</span><span class="p">);</span>  <span class="c1">// div elements that contains the text &quot;hello&quot;.</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-              <p>contains does a case-sensitive lookup.</p>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              75/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Selectors</h1></header>
-            
-            
-            <section><h1>Examples of forms selectors:</h1>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;:input&#39;</span><span class="p">);</span> 
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;:button&#39;</span><span class="p">);</span> 
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input:text&#39;</span><span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input:enabled&#39;</span><span class="p">);</span>
-</pre></div>
-
-<h1>Example of attribute selectors:</h1>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name*=&quot;myName&quot;]&#39;</span><span class="p">);</span>     <span class="c1">// Elements that have the specified attribute with </span>
-                                <span class="c1">// a value containing the given substring</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name!=&quot;myName&quot;]&#39;</span><span class="p">);</span>     <span class="c1">// not equal</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;myName&quot;]&#39;</span><span class="p">);</span>      <span class="c1">// equal</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name^=&quot;myName&quot;]&#39;</span><span class="p">);</span>     <span class="c1">// starts with</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name$=&quot;myName&quot;]&#39;</span><span class="p">);</span>     <span class="c1">// ending exactly with</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-              <p>For å oppnå best ytelse når en bruker :input eller :button, finn elementet først med rein css selectors - så bruk .filter(":input")</p>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              76/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Traversing</h1></header>
-            
-            
-            <section><h1>Examples:</h1>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">).</span><span class="nx">children</span><span class="p">()</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">).</span><span class="nx">parents</span><span class="p">()</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">).</span><span class="nx">siblings</span><span class="p">()</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li.third-item&#39;</span><span class="p">).</span><span class="nx">next</span><span class="p">();</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">).</span><span class="nx">first</span><span class="p">();</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">());</span>
-<span class="p">});</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              77/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Manipulation</h1></header>
-            
-            
-            <section><h1>Examples:</h1>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;myClass yourClass&#39;</span><span class="p">);</span>       <span class="c1">// Adds two classes to all p elements</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myDiv&#39;</span><span class="p">));</span>              <span class="c1">// Appends an h2 element to &#39;myDiv&#39;</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myDiv&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>                         <span class="c1">// Gets the html</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myDiv&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;&lt;p&gt;new content&lt;/p&gt;&#39;</span><span class="p">);</span>     <span class="c1">// Sets the html</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>             <span class="c1">// Sets the text of all li elements</span>
-    <span class="k">return</span> <span class="s1">&#39;item number &#39;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              78/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Ajax</h1></header>
-            
-            
-            <section><p>Perform an asynchronous HTTP (Ajax) request.</p>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>                   
-    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;PriceEngine/Calculate&#39;</span><span class="p">,</span>   
-    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span><span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;charlie&#39;</span><span class="p">},</span>    
-    <span class="nx">dataType</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>               
-    <span class="nx">processData</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">contentType</span><span class="o">:</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">,</span>
-    <span class="nx">contents</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="nx">async</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">cache</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-
-    <span class="nx">crossDomain</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">global</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>   
-    <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span><span class="s1">&#39;Accepts&#39;</span><span class="o">:</span><span class="s1">&#39;text/javascript&#39;</span><span class="p">},</span>
-    <span class="nx">ifModified</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">mimeType</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>   
-    <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;Ola Nordmann&#39;</span><span class="p">,</span>
-    <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;pa55ord&#39;</span><span class="p">,</span>
-    <span class="nx">timeout</span><span class="o">:</span> <span class="mi">30000</span><span class="p">,</span>
-    <span class="nx">xhr</span><span class="o">:</span> <span class="p">{},</span>
-    <span class="nx">xhrFields</span><span class="o">:</span> <span class="p">{</span><span class="nx">withCredentials</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-              <p>dataType = type data som forventes tilbake fra server. Available types are: "xml", "html", "script", "json", "jsonp", "text"
-prosessData true = data blir transformert til query string, passende for content-type.
-content-type = data blir alltid sendt til server med UTF-8 encoding, dette må dekodes på serveren.
-contents = string/regular-expression pairs that determines how jQuery will parse the response, given its contentType.
-cache = false vil tvinge browser til ikkje å cache sidene. timestamp vil bli lagt til som parameter i URLen
-crossDomain =
-global = Whether to trigger global Ajax event handlers for this request 
-headers = map of additional key/value pairs to send along with the request.
-ifModified = Allow the request to be successful only if the response has changed since the last request. Default is false
-mimeType = A mime type to override the XHR mime type
-username = To be used in response to an HTTP access authentication request
-xhr = callback for creating the request object. Defaults to the ActiveXObject when available (IE), the XMLHttpRequest otherwise
-xhrFields = set fields on the native XHR object.</p>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              79/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Ajax</h1></header>
-            
-            
-            <section><h1>Example of callback hooks:</h1>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-
-    <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXhr</span><span class="p">)</span> <span class="p">{},</span> 
-    <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">jqXhr</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{},</span>
-    <span class="nx">complete</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">jqXhr</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">)</span> <span class="p">{},</span>
-
-    <span class="nx">statusCode</span><span class="o">:</span> <span class="p">{</span>
-        <span class="mi">404</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;page not found&#39;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-              <p>beforeSend
-dataFilter - kalt rett etter suksessfylt mottak av response data. Må returnere data til success handler
-context - kontekst til alle ajax-relaterte callbacks</p>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              80/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Ajax</h1></header>
-            
-            
-            <section><h1>Shorthand methods:</h1>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="nx">success</span><span class="p">);</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="nx">success</span><span class="p">);</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="nx">success</span><span class="p">)</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              81/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Ajax</h1></header>
-            
-            
-            <section><h1>Global settings for ajax requests:</h1>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">ajaxSetup</span><span class="p">({</span>
-    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;someUrl/test&quot;</span><span class="p">,</span>
-    <span class="nx">global</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span>
-<span class="p">});</span>
-</pre></div>
-
-<h1>Global ajax event handler:</h1>
-<p><code>.ajaxComplete</code>, <code>.ajaxError</code>, <code>.ajaxSuccess</code>, <code>.ajaxSend</code>, <code>.ajaxStart</code>, <code>.ajaxStop</code></p>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div.log&quot;</span><span class="p">).</span><span class="nx">ajaxError</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Triggered ajaxError handler.&quot;</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              82/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Ajax</h1></header>
-            
-            
-            <section><div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>                   
-    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;PriceEngine/Calculate&#39;</span><span class="p">,</span>   
-    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span><span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;charlie&#39;</span><span class="p">},</span>    
-    <span class="nx">dataType</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
-    <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">jqXhr</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">);</span>
-    <span class="p">},</span> 
-    <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">jqXhr</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="nx">complete</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">jqXhr</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">);</span>
-    <span class="p">},</span>
-
-    <span class="nx">statusCode</span><span class="o">:</span> <span class="p">{</span>
-        <span class="mi">404</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;page not found&#39;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>               
-<span class="p">});</span>
-</pre></div>
-
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              83/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Ajax</h1></header>
-            
-            
-            <section><h1>Another solution:</h1>
-<p>Use $.ajax(), but wrap all the ajax related code in a facade, and translate the error 
-thrown from the server into something the client can understand.</p>
-<p>Advantages:</p>
-<ul>
-<li>All complex ajax code gathered in one place</li>
-<li>Translation between server and client happens in only one place</li>
-<li>Enhanced testability</li>
-</ul>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              84/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Example facade</h1></header>
-            
-            
-            <section><div class="highlight"><pre><span class="nx">ffshop</span><span class="p">.</span><span class="nx">calculator</span><span class="p">.</span><span class="nx">getPrice</span><span class="p">(</span><span class="nx">insuranceModel</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span>
-    <span class="nx">exploitAttack</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-    <span class="nx">accessDenied</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              85/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Example facade</h1></header>
-            
-            
-            <section><div class="highlight"><pre><span class="nx">ffshop</span><span class="p">.</span><span class="nx">calculator</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">getPrice</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">,</span> <span class="nx">callbacks</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">ffshop</span><span class="p">.</span><span class="nx">ajaxWrapper</span><span class="p">.</span><span class="nx">postJSON</span><span class="p">(</span><span class="s2">&quot;http://bit.ly/calc&quot;</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">callbacks</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">};</span>
-<span class="p">}());</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              86/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Example facade</h1></header>
-            
-            
-            <section><div class="highlight"><pre><span class="nx">ffshop</span><span class="p">.</span><span class="nx">ajaxWrapper</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-
-    <span class="kd">var</span> <span class="nx">errorCode</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="mi">400</span><span class="o">:</span> <span class="s1">&#39;accessDenied&#39;</span><span class="p">,</span>
-        <span class="mi">500</span><span class="o">:</span> <span class="s1">&#39;internalServerError&#39;</span>
-    <span class="p">};</span>
-
-    <span class="kd">function</span> <span class="nx">successHandler</span><span class="p">(</span><span class="nx">callbacks</span><span class="p">){</span> <span class="p">..};</span>
-    <span class="kd">function</span> <span class="nx">errorHandler</span><span class="p">(</span><span class="nx">callbacks</span><span class="p">){</span> <span class="p">..</span> <span class="p">};</span>
-
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">postJSON</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">callbacks</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span>
-                <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
-                <span class="nx">dataType</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
-                <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
-                <span class="nx">data</span><span class="o">:</span> <span class="nx">data</span>
-            <span class="p">};</span>
-            <span class="nx">opts</span><span class="p">.</span><span class="nx">success</span> <span class="o">=</span> <span class="nx">successHandler</span><span class="p">(</span><span class="nx">callbacks</span><span class="p">);</span>
-            <span class="nx">opts</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="nx">errorHandler</span><span class="p">(</span><span class="nx">callbacks</span><span class="p">);</span>
-
-            <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">opts</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">};</span>
-</pre></div>
-
-<p>}());</p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              87/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: jquery/01_jquery.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>jQuery</h1></header>
-            
-            
-            <section><ul>
-<li>API -  <a href="http://api.jquery.com/">http://api.jquery.com/</a></li>
-<li>Tutorials  -  <a href="http://docs.jquery.com/Tutorials">http://docs.jquery.com/Tutorials</a></li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="jquery/01_jquery.md">jquery/01_jquery.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              88/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: underscore/underscore.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Underscore.js</h1></header>
-            
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="underscore/underscore.md">underscore/underscore.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              89/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: underscore/underscore.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Underscore.js</h1></header>
-            
-            
-            <section><p>Underscore.js is a utility-belt library for JavaScript that:</p>
-<ul>
-<li>provides 60-odd functions that support both the usual functional suspects: <code>map</code>, <code>select</code>, <code>invoke</code> — as well as more specialized helpers: function binding, javascript templating, deep equality testing, and so on</li>
-<li>delegates to built-in functions, if present, so modern browsers will use the native implementations of <code>forEach</code>, <code>map</code>, <code>reduce</code>, <code>filter</code>, <code>every</code>, <code>some</code> and <code>indexOf</code></li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="underscore/underscore.md">underscore/underscore.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              90/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: underscore/underscore.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Underscore.js</h1></header>
-            
-            
-            <section><p><strong>Collections</strong> 
-<code>each</code>, <code>map</code>, <code>reduce</code>, <code>reduceRight</code>, <code>detect</code>, <code>select</code>, <code>reject</code>, <code>all</code>, <code>any</code>, <code>include</code>, <code>invoke</code>, <code>pluck</code>, <code>max</code>, <code>min</code>, <code>sortBy</code>, <code>groupBy</code>, <code>sortedIndex</code>, <code>toArray</code>, <code>size</code></p>
-<p><strong>Arrays</strong> 
-<code>first</code>, <code>rest</code>, <code>last</code>, <code>compact</code>, <code>flatten</code>, <code>without</code>, <code>union</code>, <code>intersection</code>, <code>difference</code>, <code>uniq</code>, <code>zip</code>, <code>indexOf</code>, <code>lastIndexOf</code>, <code>range</code></p>
-<p><strong>Functions</strong> 
-<code>bind</code>, <code>bindAll</code>, <code>memoize</code>, <code>delay</code>, <code>defer</code>, <code>throttle</code>, <code>debounce</code>, <code>once</code>, <code>after</code>, <code>wrap</code>, <code>compose</code></p>
-<p><strong>Objects</strong> 
-<code>keys</code>, <code>values</code>, <code>functions</code>, <code>extend</code>, <code>defaults</code>, <code>clone</code>, <code>tap</code>, <code>isEqual</code>, <code>isEmpty</code>, <code>isElement</code>, <code>isArray</code>, <code>isArguments</code>, <code>isFunction</code>, <code>isString</code>, <code>isNumber</code>, <code>isBoolean</code>, <code>isDate</code>, <code>isRegExp</code>, <code>isNaN</code>, <code>isNull</code>, <code>isUndefined</code></p>
-<p><strong>Utility</strong> 
-<code>noConflict</code>, <code>identity</code>, <code>times</code>, <code>mixin</code>, <code>uniqueId</code>, <code>template</code></p>
-<p><strong>Chaining</strong> 
-<code>chain</code>, <code>value</code></p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="underscore/underscore.md">underscore/underscore.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              91/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: underscore/underscore.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>_.extend(destination, *sources)</h1></header>
-            
-            
-            <section><ul>
-<li>Copy all of the properties in the <strong>source</strong> objects over to the <strong>destination</strong> object</li>
-<li>It's in-order, to the last source will <strong>override</strong> properties of the same name in previous arguments</li>
-</ul>
-<h1>Example:</h1>
-<div class="highlight"><pre><span class="nx">_</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;moe&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">age</span> <span class="o">:</span> <span class="mi">50</span><span class="p">});</span>
-<span class="o">=&gt;</span> <span class="p">{</span><span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;moe&#39;</span><span class="p">,</span> <span class="nx">age</span> <span class="o">:</span> <span class="mi">50</span><span class="p">}</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="underscore/underscore.md">underscore/underscore.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              92/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: underscore/underscore.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>_.template(templateString, [context])</h1></header>
-            
-            
-            <section><ul>
-<li>Compiles JavaScript templates into functions that can be evaluated for rendering</li>
-<li>Useful for rendering complicated bits of HTML from JSON data sources</li>
-<li>Template functions can both interpolate variables, using <code>&lt;%= … %&gt;</code>, as well as execute arbitrary JavaScript code, with <code>&lt;% … %&gt;</code></li>
-<li>When you evaluate a template function, pass in a context object that has properties corresponding to the template's free variables</li>
-</ul>
-<h1>Example:</h1>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">compiled</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span><span class="s2">&quot;hello: &lt;%= name %&gt;&quot;</span><span class="p">);</span>
-<span class="nx">compiled</span><span class="p">({</span><span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;moe&#39;</span><span class="p">});</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="underscore/underscore.md">underscore/underscore.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              93/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: backbone/backbone.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Backbone.js</h1></header>
-            
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="backbone/backbone.md">backbone/backbone.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              94/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: backbone/backbone.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Backbone.js</h1></header>
-            
-            
-            <section><p>Backbone.js supplies structure to JavaScript-heavy applications by providing:</p>
-<ul>
-<li><strong>models</strong> with key-value binding and custom events</li>
-<li><strong>collections</strong> with a rich API of enumerable functions</li>
-<li><strong>views</strong> with declarative event handling</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="backbone/backbone.md">backbone/backbone.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              95/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: backbone/backbone.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Backbone.Events</h1></header>
-            
-            
-            <section><p><strong>Events</strong> is a module that can be mixed in to any object, giving the object the ability to bind and trigger custom named events.</p>
-<h1>Example:</h1>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{};</span>
-
-<span class="nx">_</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Events</span><span class="p">);</span>
-
-<span class="nx">object</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s2">&quot;alert&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Triggered &quot;</span> <span class="o">+</span> <span class="nx">msg</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="nx">object</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s2">&quot;alert&quot;</span><span class="p">,</span> <span class="s2">&quot;an event&quot;</span><span class="p">);</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="backbone/backbone.md">backbone/backbone.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              96/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: backbone/backbone.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Backbone.Model</h1></header>
-            
-            
-            <section><p><strong>Models</strong> are the heart of any JavaScript application, containing the interactive data as well as a large part of the logic surrounding it: conversions, validations, computed properties, and access control.</p>
-<h1>Example:</h1>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">Sidebar</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-    <span class="nx">promptColor</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">cssColor</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Please enter a CSS color:&quot;</span><span class="p">);</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">set</span><span class="p">({</span><span class="nx">color</span><span class="o">:</span> <span class="nx">cssColor</span><span class="p">});</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-
-<span class="nb">window</span><span class="p">.</span><span class="nx">sidebar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sidebar</span><span class="p">;</span>
-
-<span class="nx">sidebar</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">&#39;change:color&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">,</span> <span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sidebar&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span><span class="nx">background</span><span class="o">:</span> <span class="nx">color</span><span class="p">});</span>
-<span class="p">});</span>
-
-<span class="nx">sidebar</span><span class="p">.</span><span class="nx">set</span><span class="p">({</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;white&#39;</span><span class="p">});</span>
-
-<span class="nx">sidebar</span><span class="p">.</span><span class="nx">promptColor</span><span class="p">();</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="backbone/backbone.md">backbone/backbone.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              97/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: backbone/backbone.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Backbone.Collection</h1></header>
-            
-            
-            <section><p><strong>Collections</strong> are ordered sets of models. You can to bind "change" events to be notified when any model in the collection has been modified, listen for "add" and "remove" events, fetch the collection from the server, and use a full suite of Underscore.js methods.</p>
-<h1>Example:</h1>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">Library</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Collection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-    <span class="nx">model</span><span class="o">:</span> <span class="nx">Book</span>
-<span class="p">});</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="backbone/backbone.md">backbone/backbone.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              98/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: backbone/backbone.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Backbone.View</h1></header>
-            
-            
-            <section><p><strong>Views</strong> are almost more convention than they are code — they don't determine anything about your HTML or CSS for you, and can be used with any JavaScript templating library. The general idea is to organize your interface into logical views, backed by models, each of which can be updated independently when the model changes, without having to redraw the page.</p>
-<h1>Example:</h1>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">DocumentRow</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-    <span class="nx">tagName</span><span class="o">:</span> <span class="s2">&quot;li&quot;</span><span class="p">,</span>
-    <span class="nx">className</span><span class="o">:</span> <span class="s2">&quot;document-row&quot;</span><span class="p">,</span>
-
-    <span class="nx">events</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;click .icon&quot;</span><span class="o">:</span>          <span class="s2">&quot;open&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;click .button.edit&quot;</span><span class="o">:</span>   <span class="s2">&quot;openEditDialog&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;click .button.delete&quot;</span><span class="o">:</span> <span class="s2">&quot;destroy&quot;</span>
-    <span class="p">},</span>
-
-    <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-         <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="backbone/backbone.md">backbone/backbone.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              99/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: backbone/backbone.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>$ (jQuery or Zepto)</h1></header>
-            
-            
-            <section><p>If jQuery or Zepto is included on the page, each view has a $ function that runs queries scoped within the view's element.</p>
-<h1>Example:</h1>
-<div class="highlight"><pre><span class="nx">ui</span><span class="p">.</span><span class="nx">Chapter</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-    <span class="nx">serialize</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="nx">title</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.title&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(),</span>
-            <span class="nx">start</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.start-page&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(),</span>
-            <span class="nx">end</span><span class="o">:</span>   <span class="k">this</span><span class="p">.</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.end-page&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span>
-        <span class="p">};</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="backbone/backbone.md">backbone/backbone.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              100/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: backbone/backbone.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Backbone.View Templating</h1></header>
-            
-            
-            <section><h1>Example:</h1>
-<div class="highlight"><pre><span class="nx">TravelPriceView</span><span class="o">:</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;travel-price-view&#39;</span><span class="p">,</span>
-    <span class="nx">template</span><span class="o">:</span> <span class="nx">_</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span>
-    <span class="s1">&#39;Pris pr måned: &lt;span id=&quot;price-per-month&quot;&gt;&lt;%= pricePerMonth %&gt;&lt;/span&gt;&lt;br /&gt;&#39;</span> <span class="o">+</span>
-    <span class="s1">&#39;Pris pr år: &lt;span id=&quot;price-per-year&quot;&gt;&lt;%= pricePerYear %&gt;&lt;/span&lt;br /&gt;&#39;</span> <span class="o">+</span>
-    <span class="s1">&#39;Forutsetninger: &lt;span id=&quot;prerequisites&quot;&gt;Alder &lt;%= age %&gt;år&lt;br /&gt;Type &lt;%= risk %&gt;&lt;/span&gt;&lt;br /&gt;&#39;</span> <span class="o">+</span>
-    <span class="s1">&#39;Forsikringen dekker: &lt;span id=&quot;coverages&quot;&gt;&lt;%= coverages %&gt;&lt;/span&gt;&#39;</span><span class="p">),</span>
-
-    <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">el</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">model</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">()));</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="backbone/backbone.md">backbone/backbone.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              101/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: backbone/backbone.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Backbone.Router</h1></header>
-            
-            
-            <section><p><strong>Router</strong> provides methods for routing client-side pages, and connecting them to actions and events. For browsers which don't yet support the History API, the Router handles graceful fallback and transparent translation to the fragment version of the URL.</p>
-<h1>Example:</h1>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">Workspace</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-
-    <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;help&quot;</span><span class="o">:</span>                 <span class="s2">&quot;help&quot;</span><span class="p">,</span>    <span class="c1">// #help</span>
-        <span class="s2">&quot;search/:query&quot;</span><span class="o">:</span>        <span class="s2">&quot;search&quot;</span><span class="p">,</span>  <span class="c1">// #search/kiwis</span>
-        <span class="s2">&quot;search/:query/p:page&quot;</span><span class="o">:</span> <span class="s2">&quot;search&quot;</span>   <span class="c1">// #search/kiwis/p7</span>
-    <span class="p">},</span>
-
-    <span class="nx">help</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">},</span>
-
-    <span class="nx">search</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="backbone/backbone.md">backbone/backbone.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              102/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: backbone/backbone.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Backbone.History</h1></header>
-            
-            
-            <section><p><strong>History</strong> serves as a global router (per frame) to handle hashchange events or pushState, match the appropriate route, and trigger callbacks.</p>
-<h1>Example:</h1>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="k">new</span> <span class="nx">WorkspaceRouter</span><span class="p">();</span>
-    <span class="k">new</span> <span class="nx">HelpPaneRouter</span><span class="p">();</span>
-    <span class="nx">Backbone</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span><span class="nx">pushState</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="backbone/backbone.md">backbone/backbone.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              103/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: buster/buster.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Buster.js</h1></header>
-            
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="buster/buster.md">buster/buster.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              104/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: buster/buster.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Buster.js</h1></header>
-            
-            
-            <section><div class="highlight"><pre><span class="nx">buster</span><span class="p">.</span><span class="nx">testCase</span><span class="p">(</span><span class="s2">&quot;Sample test&quot;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">setUp</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-
-    <span class="p">},</span>
-
-    <span class="nx">tearDown</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-
-    <span class="p">},</span>
-
-    <span class="s2">&quot;should pass simple assertion&quot;</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-       <span class="nx">buster</span><span class="p">.</span><span class="nx">assert</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-    <span class="p">},</span>
-
-    <span class="s2">&quot;should fail when test throws&quot;</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Ooops!&quot;</span><span class="p">);</span>
-    <span class="p">},</span>
-
-    <span class="s2">&quot;should fail test&quot;</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">buster</span><span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equals</span><span class="p">(</span><span class="s2">&quot;Something&quot;</span><span class="p">,</span> <span class="s2">&quot;Other&quot;</span><span class="p">);</span>
-    <span class="p">},</span>
-
-    <span class="s2">&quot;should use sinon&quot;</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">meth</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{}</span> <span class="p">};</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">spy</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">&quot;meth&quot;</span><span class="p">);</span>
-        <span class="nx">buster</span><span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">called</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">meth</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="buster/buster.md">buster/buster.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              105/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: buster/buster.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Buster.js</h1></header>
-            
-            
-            <section><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Buster.JS Test case<span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media=</span><span class="s">&quot;all&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;buster-test.css&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="c">&lt;!-- Include your .js files here --&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;buster-test.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;test-case.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="buster/buster.md">buster/buster.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              106/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: buster/buster.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Buster.js</h1></header>
-            
-            
-            <section><iframe src="buster/samples/test-case.html" width="830" height="500"></iframe></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="buster/buster.md">buster/buster.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              107/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: resources.md -->
+      <!-- slide source: resources/01_javascript.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
@@ -4217,18 +2494,14 @@ thrown from the server into something the client can understand.</p>
             
             
             <section><ul>
-<li><a href="http://kangax.github.com/nfe/">Named function expressions demystified</a></li>
-<li><a href="http://addyosmani.com/largescalejavascript">Patterns For Large-Scale JavaScript Application Architecture</a></li>
-<li><a href="https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide">Core Javascript 1.5 Guide</a></li>
-<li><a href="https://developer.mozilla.org/en/JavaScript/Reference">Core Javascript 1.5 Reference</a></li>
-<li><a href="http://blog.morrisjohns.com/javascript_closures_for_dummies.html">Closures for dummies</a></li>
-<li><a href="http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/">Essential JavaScript Design Patterns For Beginners, Volume 1.</a></li>
-<li><a href="http://javascript.crockford.com/">Douglas Crockford</a></li>
+<li><a href="https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide">MDN Core Javascript 1.5 Guide</a></li>
+<li><a href="https://developer.mozilla.org/en/JavaScript/Reference">MDN Core Javascript 1.5 Reference</a></li>
 <li><a href="http://dev.opera.com/articles/view/javascript-best-practices/">JavaScript best practices</a></li>
 <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/24-javascript-best-practices-for-beginners/">JavaScript Best Practices for Beginners</a></li>
 <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/">The Essentials of Writing High Quality JavaScript</a></li>
-<li><a href="http://www.jslint.com/">JSLint</a></li>
-<li><a href="http://jslint4vs2010.codeplex.com/">JSLint for Visual Studio</a></li>
+<li><a href="http://www.jspatterns.com/">JSPatterns.com</a></li>
+<li><a href="http://shichuan.github.com/javascript-patterns/">JavaScript Pattern Collection</a></li>
+<li><a href="http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/">Essential JavaScript Design Patterns For Beginners, Volume 1</a></li>
 </ul></section>
             
           </div>
@@ -4241,55 +2514,17 @@ thrown from the server into something the client can understand.</p>
           <footer>
             
             <aside class="source">
-              Source: <a href="resources.md">resources.md</a>
+              Source: <a href="resources/01_javascript.md">resources/01_javascript.md</a>
             </aside>
             
             <aside class="page_number">
-              108/111
+              66/68
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: resources.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Resources cont.</h1></header>
-            
-            
-            <section><ul>
-<li><a href="http://api.jquery.com/">jQuery API</a></li>
-<li><a href="http://documentcloud.github.com/backbone/">Backbone.js</a></li>
-<li><a href="http://lostechies.com/derickbailey/category/backbone/">Backbone.js blogging</a></li>
-<li><a href="https://github.com/derickbailey/backbone.modelbinding">Backbone.js modelbinding</a></li>
-<li><a href="http://documentcloud.github.com/underscore/">Underscore.js</a></li>
-<li><a href="http://busterjs.org/">Buster.js</a></li>
-<li><a href="http://sinonjs.org">Sinon.js</a></li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="resources.md">resources.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              109/111
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: resources.md -->
+      <!-- slide source: resources/03_books.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
@@ -4297,7 +2532,7 @@ thrown from the server into something the client can understand.</p>
             <header><h1>Books</h1></header>
             
             
-            <section><p><img alt="Good Parts" src="books.jpg" /></p></section>
+            <section><p><img alt="Good Parts" src="resources/../books.jpg" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -4309,23 +2544,27 @@ thrown from the server into something the client can understand.</p>
           <footer>
             
             <aside class="source">
-              Source: <a href="resources.md">resources.md</a>
+              Source: <a href="resources/03_books.md">resources/03_books.md</a>
             </aside>
             
             <aside class="page_number">
-              110/111
+              67/68
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: phew.md -->
+      <!-- slide source: about.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide social">
           <div class="inner">
             
-            <header><h1>PHEW!</h1></header>
+            <header><h1>Thanks for listening!</h1></header>
             
+            
+            <section><p><img alt="twitter" src="twitter_32.png" /> @thedersen</p>
+<p><img alt="mail" src="email_32.png" /> thedersen@gmail.com</p>
+<p><img alt="github" src="github_32.png" /> http://github.com/thedersen</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -4337,11 +2576,11 @@ thrown from the server into something the client can understand.</p>
           <footer>
             
             <aside class="source">
-              Source: <a href="phew.md">phew.md</a>
+              Source: <a href="about.md">about.md</a>
             </aside>
             
             <aside class="page_number">
-              111/111
+              68/68
             </aside>
           </footer>
         </div>
@@ -4410,43 +2649,43 @@ thrown from the server into something the client can understand.</p>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">Prototype Chaining</a></th>
+        <th><a href="#slide11">Prototype</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Functions</a></th>
+        <th><a href="#slide12">Prototype Chaining</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">Functions are first class objects</a></th>
+        <th><a href="#slide13">Functions</a></th>
         <td><a href="#slide13">13</a></td>
       </tr>
       
       
       <tr id="toc-row-14">
-        <th><a href="#slide14">Function literals</a></th>
+        <th><a href="#slide14">Functions are first class objects</a></th>
         <td><a href="#slide14">14</a></td>
       </tr>
       
       
       <tr id="toc-row-15">
-        <th><a href="#slide15">Function invocation patterns</a></th>
+        <th><a href="#slide15">Function literals</a></th>
         <td><a href="#slide15">15</a></td>
       </tr>
       
       
       <tr id="toc-row-16">
-        <th><a href="#slide16">Method invocation pattern</a></th>
+        <th><a href="#slide16">Function invocation patterns</a></th>
         <td><a href="#slide16">16</a></td>
       </tr>
       
       
       <tr id="toc-row-17">
-        <th><a href="#slide17">Function invocation pattern</a></th>
+        <th><a href="#slide17">Method invocation pattern</a></th>
         <td><a href="#slide17">17</a></td>
       </tr>
       
@@ -4458,19 +2697,19 @@ thrown from the server into something the client can understand.</p>
       
       
       <tr id="toc-row-19">
-        <th><a href="#slide19">Constructor invocation pattern</a></th>
+        <th><a href="#slide19">Function invocation pattern</a></th>
         <td><a href="#slide19">19</a></td>
       </tr>
       
       
       <tr id="toc-row-20">
-        <th><a href="#slide20">Apply invocation pattern</a></th>
+        <th><a href="#slide20">Constructor invocation pattern</a></th>
         <td><a href="#slide20">20</a></td>
       </tr>
       
       
       <tr id="toc-row-21">
-        <th><a href="#slide21">arguments</a></th>
+        <th><a href="#slide21">Apply invocation pattern</a></th>
         <td><a href="#slide21">21</a></td>
       </tr>
       
@@ -4506,7 +2745,7 @@ thrown from the server into something the client can understand.</p>
       
       
       <tr id="toc-row-27">
-        <th><a href="#slide27">Hoisting</a></th>
+        <th><a href="#slide27">Scope</a></th>
         <td><a href="#slide27">27</a></td>
       </tr>
       
@@ -4518,37 +2757,37 @@ thrown from the server into something the client can understand.</p>
       
       
       <tr id="toc-row-29">
-        <th><a href="#slide29">Scope</a></th>
+        <th><a href="#slide29">Global Scope</a></th>
         <td><a href="#slide29">29</a></td>
       </tr>
       
       
       <tr id="toc-row-30">
-        <th><a href="#slide30">Scope</a></th>
+        <th><a href="#slide30">GLOBAL VARIABLES ARE EVIL!</a></th>
         <td><a href="#slide30">30</a></td>
       </tr>
       
       
       <tr id="toc-row-31">
-        <th><a href="#slide31">Global Scope</a></th>
+        <th><a href="#slide31">Scope</a></th>
         <td><a href="#slide31">31</a></td>
       </tr>
       
       
       <tr id="toc-row-32">
-        <th><a href="#slide32">Global Scope</a></th>
+        <th><a href="#slide32">Closure</a></th>
         <td><a href="#slide32">32</a></td>
       </tr>
       
       
       <tr id="toc-row-33">
-        <th><a href="#slide33">GLOBAL VARIABLES ARE EVIL!</a></th>
+        <th><a href="#slide33">Closure</a></th>
         <td><a href="#slide33">33</a></td>
       </tr>
       
       
       <tr id="toc-row-34">
-        <th><a href="#slide34">Scope</a></th>
+        <th><a href="#slide34">Closure</a></th>
         <td><a href="#slide34">34</a></td>
       </tr>
       
@@ -4560,37 +2799,37 @@ thrown from the server into something the client can understand.</p>
       
       
       <tr id="toc-row-36">
-        <th><a href="#slide36">Closure</a></th>
+        <th><a href="#slide36">JavaScript Types</a></th>
         <td><a href="#slide36">36</a></td>
       </tr>
       
       
       <tr id="toc-row-37">
-        <th><a href="#slide37">Closure</a></th>
+        <th><a href="#slide37">Numbers</a></th>
         <td><a href="#slide37">37</a></td>
       </tr>
       
       
       <tr id="toc-row-38">
-        <th><a href="#slide38">Closure</a></th>
+        <th><a href="#slide38">parseInt</a></th>
         <td><a href="#slide38">38</a></td>
       </tr>
       
       
       <tr id="toc-row-39">
-        <th><a href="#slide39">Closure</a></th>
+        <th><a href="#slide39">parseInt</a></th>
         <td><a href="#slide39">39</a></td>
       </tr>
       
       
       <tr id="toc-row-40">
-        <th><a href="#slide40">JavaScript Types</a></th>
+        <th><a href="#slide40">parseInt</a></th>
         <td><a href="#slide40">40</a></td>
       </tr>
       
       
       <tr id="toc-row-41">
-        <th><a href="#slide41">Numbers</a></th>
+        <th><a href="#slide41">parseInt</a></th>
         <td><a href="#slide41">41</a></td>
       </tr>
       
@@ -4602,97 +2841,97 @@ thrown from the server into something the client can understand.</p>
       
       
       <tr id="toc-row-43">
-        <th><a href="#slide43">parseInt</a></th>
+        <th><a href="#slide43">Strings</a></th>
         <td><a href="#slide43">43</a></td>
       </tr>
       
       
       <tr id="toc-row-44">
-        <th><a href="#slide44">parseInt</a></th>
+        <th><a href="#slide44">Booleans</a></th>
         <td><a href="#slide44">44</a></td>
       </tr>
       
       
       <tr id="toc-row-45">
-        <th><a href="#slide45">parseInt</a></th>
+        <th><a href="#slide45">Arrays</a></th>
         <td><a href="#slide45">45</a></td>
       </tr>
       
       
       <tr id="toc-row-46">
-        <th><a href="#slide46">Strings</a></th>
+        <th><a href="#slide46">Array literals</a></th>
         <td><a href="#slide46">46</a></td>
       </tr>
       
       
       <tr id="toc-row-47">
-        <th><a href="#slide47">Booleans</a></th>
+        <th><a href="#slide47">Array.length</a></th>
         <td><a href="#slide47">47</a></td>
       </tr>
       
       
       <tr id="toc-row-48">
-        <th><a href="#slide48">Arrays</a></th>
+        <th><a href="#slide48">Dates</a></th>
         <td><a href="#slide48">48</a></td>
       </tr>
       
       
       <tr id="toc-row-49">
-        <th><a href="#slide49">Array literals</a></th>
+        <th><a href="#slide49">RegExp</a></th>
         <td><a href="#slide49">49</a></td>
       </tr>
       
       
       <tr id="toc-row-50">
-        <th><a href="#slide50">Array.length</a></th>
+        <th><a href="#slide50">Patterns</a></th>
         <td><a href="#slide50">50</a></td>
       </tr>
       
       
       <tr id="toc-row-51">
-        <th><a href="#slide51">Dates</a></th>
+        <th><a href="#slide51">Module Pattern</a></th>
         <td><a href="#slide51">51</a></td>
       </tr>
       
       
       <tr id="toc-row-52">
-        <th><a href="#slide52">RegExp</a></th>
+        <th><a href="#slide52">Revealing Module Pattern</a></th>
         <td><a href="#slide52">52</a></td>
       </tr>
       
       
       <tr id="toc-row-53">
-        <th><a href="#slide53">Patterns</a></th>
+        <th><a href="#slide53">Sandboxing</a></th>
         <td><a href="#slide53">53</a></td>
       </tr>
       
       
       <tr id="toc-row-54">
-        <th><a href="#slide54">Module Pattern</a></th>
+        <th><a href="#slide54">Styles</a></th>
         <td><a href="#slide54">54</a></td>
       </tr>
       
       
       <tr id="toc-row-55">
-        <th><a href="#slide55">Revealing Module Pattern</a></th>
+        <th><a href="#slide55">Style Isn't Subjective</a></th>
         <td><a href="#slide55">55</a></td>
       </tr>
       
       
       <tr id="toc-row-56">
-        <th><a href="#slide56">Sandboxing</a></th>
+        <th><a href="#slide56">Style Isn't Subjective</a></th>
         <td><a href="#slide56">56</a></td>
       </tr>
       
       
       <tr id="toc-row-57">
-        <th><a href="#slide57">BE RELIGIOUS ABOUT EXPANDING NO FURTHER THAN ONE ROOT VARIABLE! --&gt;</a></th>
+        <th><a href="#slide57">Style Isn't Subjective</a></th>
         <td><a href="#slide57">57</a></td>
       </tr>
       
       
       <tr id="toc-row-58">
-        <th><a href="#slide58">Styles</a></th>
+        <th><a href="#slide58">Style Isn't Subjective</a></th>
         <td><a href="#slide58">58</a></td>
       </tr>
       
@@ -4728,290 +2967,32 @@ thrown from the server into something the client can understand.</p>
       
       
       <tr id="toc-row-64">
-        <th><a href="#slide64">Style Isn't Subjective</a></th>
+        <th><a href="#slide64">Styles</a></th>
         <td><a href="#slide64">64</a></td>
       </tr>
       
       
       <tr id="toc-row-65">
-        <th><a href="#slide65">Style Isn't Subjective</a></th>
+        <th><a href="#slide65">JSLint</a></th>
         <td><a href="#slide65">65</a></td>
       </tr>
       
       
       <tr id="toc-row-66">
-        <th><a href="#slide66">Style Isn't Subjective</a></th>
+        <th><a href="#slide66">Resources</a></th>
         <td><a href="#slide66">66</a></td>
       </tr>
       
       
       <tr id="toc-row-67">
-        <th><a href="#slide67">Style Isn't Subjective</a></th>
+        <th><a href="#slide67">Books</a></th>
         <td><a href="#slide67">67</a></td>
       </tr>
       
       
       <tr id="toc-row-68">
-        <th><a href="#slide68">Styles</a></th>
+        <th><a href="#slide68">Thanks for listening!</a></th>
         <td><a href="#slide68">68</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-69">
-        <th><a href="#slide69">JSLint</a></th>
-        <td><a href="#slide69">69</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-70">
-        <th><a href="#slide70">jQuery</a></th>
-        <td><a href="#slide70">70</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-71">
-        <th><a href="#slide71">jQuery</a></th>
-        <td><a href="#slide71">71</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-72">
-        <th><a href="#slide72">jQuery</a></th>
-        <td><a href="#slide72">72</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-73">
-        <th><a href="#slide73">ready event</a></th>
-        <td><a href="#slide73">73</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-74">
-        <th><a href="#slide74">Selectors</a></th>
-        <td><a href="#slide74">74</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-75">
-        <th><a href="#slide75">Selectors</a></th>
-        <td><a href="#slide75">75</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-76">
-        <th><a href="#slide76">Selectors</a></th>
-        <td><a href="#slide76">76</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-77">
-        <th><a href="#slide77">Traversing</a></th>
-        <td><a href="#slide77">77</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-78">
-        <th><a href="#slide78">Manipulation</a></th>
-        <td><a href="#slide78">78</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-79">
-        <th><a href="#slide79">Ajax</a></th>
-        <td><a href="#slide79">79</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-80">
-        <th><a href="#slide80">Ajax</a></th>
-        <td><a href="#slide80">80</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-81">
-        <th><a href="#slide81">Ajax</a></th>
-        <td><a href="#slide81">81</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-82">
-        <th><a href="#slide82">Ajax</a></th>
-        <td><a href="#slide82">82</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-83">
-        <th><a href="#slide83">Ajax</a></th>
-        <td><a href="#slide83">83</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-84">
-        <th><a href="#slide84">Ajax</a></th>
-        <td><a href="#slide84">84</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-85">
-        <th><a href="#slide85">Example facade</a></th>
-        <td><a href="#slide85">85</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-86">
-        <th><a href="#slide86">Example facade</a></th>
-        <td><a href="#slide86">86</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-87">
-        <th><a href="#slide87">Example facade</a></th>
-        <td><a href="#slide87">87</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-88">
-        <th><a href="#slide88">jQuery</a></th>
-        <td><a href="#slide88">88</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-89">
-        <th><a href="#slide89">Underscore.js</a></th>
-        <td><a href="#slide89">89</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-90">
-        <th><a href="#slide90">Underscore.js</a></th>
-        <td><a href="#slide90">90</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-91">
-        <th><a href="#slide91">Underscore.js</a></th>
-        <td><a href="#slide91">91</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-92">
-        <th><a href="#slide92">_.extend(destination, *sources)</a></th>
-        <td><a href="#slide92">92</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-93">
-        <th><a href="#slide93">_.template(templateString, [context])</a></th>
-        <td><a href="#slide93">93</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-94">
-        <th><a href="#slide94">Backbone.js</a></th>
-        <td><a href="#slide94">94</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-95">
-        <th><a href="#slide95">Backbone.js</a></th>
-        <td><a href="#slide95">95</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-96">
-        <th><a href="#slide96">Backbone.Events</a></th>
-        <td><a href="#slide96">96</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-97">
-        <th><a href="#slide97">Backbone.Model</a></th>
-        <td><a href="#slide97">97</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-98">
-        <th><a href="#slide98">Backbone.Collection</a></th>
-        <td><a href="#slide98">98</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-99">
-        <th><a href="#slide99">Backbone.View</a></th>
-        <td><a href="#slide99">99</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-100">
-        <th><a href="#slide100">$ (jQuery or Zepto)</a></th>
-        <td><a href="#slide100">100</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-101">
-        <th><a href="#slide101">Backbone.View Templating</a></th>
-        <td><a href="#slide101">101</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-102">
-        <th><a href="#slide102">Backbone.Router</a></th>
-        <td><a href="#slide102">102</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-103">
-        <th><a href="#slide103">Backbone.History</a></th>
-        <td><a href="#slide103">103</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-104">
-        <th><a href="#slide104">Buster.js</a></th>
-        <td><a href="#slide104">104</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-105">
-        <th><a href="#slide105">Buster.js</a></th>
-        <td><a href="#slide105">105</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-106">
-        <th><a href="#slide106">Buster.js</a></th>
-        <td><a href="#slide106">106</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-107">
-        <th><a href="#slide107">Buster.js</a></th>
-        <td><a href="#slide107">107</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-108">
-        <th><a href="#slide108">Resources</a></th>
-        <td><a href="#slide108">108</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-109">
-        <th><a href="#slide109">Resources cont.</a></th>
-        <td><a href="#slide109">109</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-110">
-        <th><a href="#slide110">Books</a></th>
-        <td><a href="#slide110">110</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-111">
-        <th><a href="#slide111">PHEW!</a></th>
-        <td><a href="#slide111">111</a></td>
       </tr>
       
       

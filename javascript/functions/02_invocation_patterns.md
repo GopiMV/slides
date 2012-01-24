@@ -11,6 +11,8 @@
 
 # Method invocation pattern
 
+.fx: runnable
+
 * When a function is stored as a property of an object, it is called a method
 * When a method is invoked, `this` is bound to that object (late binding)
 
@@ -21,6 +23,7 @@
         value: 0,
         increment: function(inc) {
             this.value += inc;
+            alert(this);
         }
     }
 
@@ -56,6 +59,28 @@ A consequence is that a method cannot employ an inner function to help it do its
 
     !javascript
     myObject.double = function() {
+
+
+        var helper = function() {
+            this.value = add(this.value, this.value); // this.value
+                                                      // is undefined
+        };
+
+        helper(); // invoke helper as a function
+    };
+
+    myObject.double(); // invoke double as a method
+
+---
+
+# Function invocation pattern
+
+.fx: no-transition
+
+# Example 2:
+
+    !javascript
+    myObject.double = function() {
         var that = this; // workaround
 
         var helper = function() {
@@ -71,6 +96,8 @@ A consequence is that a method cannot employ an inner function to help it do its
 
 # Constructor invocation pattern
 
+.fx: runnable
+
 * If a function is invoked with the `new` prefix, a new object will be created with a hidden link to the value of the function's `prototype` member
 * `this` is bound to that new object
 * By convention, they are kept in variables with a capitalized name
@@ -82,10 +109,13 @@ A consequence is that a method cannot employ an inner function to help it do its
     // Create a constructor function called Foo
     var Foo = function(string) {
         this.value = string;
+        alert(this);
     };
 
     // Make an instance of Foo
     var myFoo = new Foo('confused');
+    // Call Foo as an function
+    var myFoo = Foo('confused');
 
 ---
 
@@ -98,9 +128,9 @@ A consequence is that a method cannot employ an inner function to help it do its
 
     !javascript
     var context = {};
-    var array = [3, 4];
 
-    var sum = add.apply(context, array); // this === context inside
+    var args = [3, 4];
+    var sum = add.apply(context, args); // this === context inside
                                          // the add function
 
     var sum = add.call(context, 3, 4); // this === context inside

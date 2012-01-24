@@ -18,7 +18,7 @@
 	    alert('Hello, my name is ' + this.name);
 	};
 
-	var thomas = new Person("Thomas");
+	var thomas = new Person('Thomas');
 	thomas.sayHello();
 
 ---
@@ -36,7 +36,7 @@
 	    alert('Hello, my name is ' + this.name);
 	};
 
-	var thomas = new Person("Thomas");
+	var thomas = new Person('Thomas');
 	thomas.sayHello();
 
 	Person.prototype.sayMyName = function () {
@@ -52,11 +52,19 @@
 .fx: runnable
 
 	!javascript
+	var Person = function () {
+	};
+	Person.prototype.sayHello = function () {
+	    alert('Hello, my name is ' + this.name);
+	};
+
+
+
 	var Customer = function (name) {
 	    this.name = name;
 	};
 
 	Customer.prototype = new Person();
 
-	var customer = new Customer("Customer");
+	var customer = new Customer('Customer');
 	customer.sayHello();

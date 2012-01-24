@@ -31,7 +31,7 @@
 	var emptyObject = { };
 
 	var myObject = {
-		"some-property": "some value",
+		'some property': 'some value',
 		foo: bar,
 		method: function(param) {
 			// do stuff

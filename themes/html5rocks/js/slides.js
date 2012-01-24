@@ -592,19 +592,19 @@ function main() {
 
         addRemoteWindowControls();
 
-        // $('.runnable').each(function() {
-        //     var codes = $(this).find('pre');
-        //     codes.each(function(){
-        //         var code = $(this);
-        //         var button = $('<div class="run" title="Run"></div>');
-        //         $(button).insertBefore(code).bind('click', function(){
-        //             try {
-        //                 eval($(code).text());
-        //             } catch(err){
-        //                 alert("Caught exception: " + err);
-        //             }
-        //         });
-        //     });
-        // });
+        $('.runnable').each(function() {
+            var codes = $(this).find('pre');
+            codes.each(function(){
+                var code = $(this);
+                var button = $('<div class="run" title="Run"></div>');
+                $(button).insertBefore(code).bind('click', function(){
+                    try {
+                        eval($(code).text());
+                    } catch(err){
+                        alert("Caught exception: " + err);
+                    }
+                });
+            });
+        });
     })();
 }

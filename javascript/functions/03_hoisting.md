@@ -3,15 +3,15 @@
 .fx: runnable
 
 	!javascript
-	var myvar = 'my value';  
+	var myvar = 'my value';
 
-	function bar() {  
-	  	alert(myvar);  
-	  	var myvar = 'local value';  
+	function bar() {
+	  	alert(myvar);
+	  	var myvar = 'local value';
 	}
-	
+
 	bar();
-	
+
 ---
 
 # Hoisting
@@ -19,16 +19,16 @@
 .fx: no-transition runnable
 
 	!javascript
-	var myvar = 'my value';  
+	var myvar = 'my value';
 
 	function bar() {
 		var myvar = undefined;
-	  	alert(myvar); // undefined  
-	  	myvar = 'local value';  
+	  	alert(myvar); // undefined
+	  	myvar = 'local value';
 	}
-	
+
 	bar();
-	
+
 ---
 
 # Hoisting
@@ -43,14 +43,14 @@
 		return a + b;
 	};
 
-# Function declaration:	
-	
+# Function declaration:
+
 	!javascript
 	alert(add(2, 3));
-	function add(a, b) { 
-		return a + b; 
+	function add(a, b) {
+		return a + b;
 	}
-		
+
 ---
 
 # Hoisting
@@ -61,13 +61,13 @@
 
 	!javascript
 	var add = undefined;
-	alert(add(2, 3)); // undefined
-	add = function(a, b) { 
-		return a + b; 
+	alert(add(2, 3)); // error
+	add = function(a, b) {
+		return a + b;
 	};
-	
+
 # Function declaration:
-	
+
 	!javascript
 	var add = function add(a, b) {
 		return a + b;
@@ -76,7 +76,7 @@
 
 ---
 
-# Hoisting 
+# Hoisting
 
 # Takeaway:
 

@@ -10,17 +10,19 @@
 ### An expressive notation for creating arrays
 
 	!javascript
-	var array = ['one', 'two', 'three'];
-	
+	var array = ['one', 'two', {number: 'three'}, function() {}];
+
 ---
 
 # Array.length
 
+.fx: runnable
+
 	!javascript
 	var a = ['one', 'two'];
-	a.length // 2
+	alert(a.length);
+
 	a[100] = 'three';
-	a.length // 101
+	alert(a.length);
 
 * `array.length` is always one more than the highest index
-	

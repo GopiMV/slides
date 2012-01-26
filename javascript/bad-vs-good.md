@@ -1,4 +1,4 @@
-![bad-vs-good](bad-vs-good.jpg)
+![bad-vs-good](../images/bad-vs-good.jpg)
 
 ---
 
@@ -6,18 +6,18 @@
 
 * Global Variables
 * Semicolon insertion
-* \+ adds and concatenates 
-* `typeof` 
-* `with` and `eval` 
-* phony arrays 
-* `false`, `null`, `undefined`, `NaN` 
-* `==` and `!=` 
+* \+ adds and concatenates
+* `typeof`
+* `with` and `eval`
+* phony arrays
+* `false`, `null`, `undefined`, `NaN`
+* `==` and `!=`
 
 ---
 
 # The Good Parts
 
-* Loose Typing 
-* Dynamic Objects 
-* Object Literals 
+* Loose Typing
+* Dynamic Objects
+* Object Literals
 * Functions (lambda)

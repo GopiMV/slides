@@ -1,3 +1,3 @@
 # Books
 
-![Good Parts](../books.jpg)
+![Good Parts](../images/books.jpg)

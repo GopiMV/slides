@@ -282,8 +282,9 @@ function main() {
     };
 
     var updateOverview = function() {
+        var presentation;
         try {
-            var presentation = document.getElementsByClassName('presentation')[0];
+            presentation = document.getElementsByClassName('presentation')[0];
         } catch (e) {
             return;
         }
@@ -374,6 +375,18 @@ function main() {
         blanked = !blanked;
     };
 
+    var runCodeSnippet = function(el) {
+        var codeSnippets = getSlideEl(currentSlideNo).getElementsByTagName('pre');
+        codeSnippets = (el ? [el] : codeSnippets);
+        for (var i = 0; i < codeSnippets.length; i++) {
+            try {
+                eval(codeSnippets[i].innerText);
+            } catch(err){
+                alert("Caught exception: " + err);
+            }
+        }
+    };
+
     var isModifierKey = function(keyCode) {
         switch (keyCode) {
             case 16: // shift
@@ -381,10 +394,8 @@ function main() {
             case 18: // alt
             case 91: // command
                 return true;
-                break;
             default:
                 return false;
-                break;
         }
     };
 
@@ -460,8 +471,8 @@ function main() {
                 }
                 break;
             case 82: // r
-                if(modifierKeyDown) {
-                    $('.current .run').click();
+                if(!modifierKeyDown && !overviewActive) {
+                    runCodeSnippet();
                 }
                 break;
             case 83: // s
@@ -555,10 +566,28 @@ function main() {
         }
     };
 
+    var addRunCodeSnippetButtons = function() {
+        var runnable = document.getElementsByClassName('runnable');
+        for (var i = 0; i < runnable.length; i++) {
+            var codeSnippets = runnable[i].getElementsByTagName('pre');
+            for (var j = 0; j < codeSnippets.length; j++) {
+                var codeSnippet = codeSnippets[j];
+                var div = document.createElement('div');
+                div.className = 'run';
+                codeSnippet.parentElement.insertBefore(div, codeSnippet);
+
+                div.addEventListener('click', function(e){
+                    e.preventDefault();
+                    runCodeSnippet(e.target.nextSibling);
+                });
+            }
+        }
+    };
+
     // initialize
 
     (function() {
-        if (window.location.hash == "") {
+        if (window.location.hash === '') {
             currentSlideNo = 1;
         } else if (window.location.hash.indexOf("#presenter") != -1) {
             currentSlideNo = Number(window.location.hash.replace('#presenter', ''));
@@ -592,19 +621,6 @@ function main() {
 
         addRemoteWindowControls();
 
-        $('.runnable').each(function() {
-            var codes = $(this).find('pre');
-            codes.each(function(){
-                var code = $(this);
-                var button = $('<div class="run" title="Run"></div>');
-                $(button).insertBefore(code).bind('click', function(){
-                    try {
-                        eval($(code).text());
-                    } catch(err){
-                        alert("Caught exception: " + err);
-                    }
-                });
-            });
-        });
+        addRunCodeSnippetButtons();
     })();
 }
